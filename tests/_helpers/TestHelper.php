@@ -5,4 +5,11 @@ namespace Codeception\Module;
 
 class TestHelper extends \Codeception\Module
 {
+    function haveInSession($name, $value)
+    {
+        $di = \Phalcon\Di::getDefault();
+        if ($di) {
+            $di->get('session')->set($name, $value);
+        }
+    }
 }

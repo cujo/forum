@@ -445,44 +445,6 @@ class TestGuy extends \Codeception\AbstractGuy
      * Documentation taken from corresponding module.
      * ----------------------------------------------
      *
-     *
-     * @see Codeception\Module::getName()
-     * @return \Codeception\Maybe
-     */
-    public function getName() {
-        $this->scenario->addStep(new \Codeception\Step\Action('getName', func_get_args()));
-        if ($this->scenario->running()) {
-            $result = $this->scenario->runStep();
-            return new Maybe($result);
-        }
-        return new Maybe();
-    }
-
- 
-    /**
-     * This method is generated.
-     * Documentation taken from corresponding module.
-     * ----------------------------------------------
-     *
-     *
-     * @see Codeception\Module\Phalcon1::haveInSession()
-     * @return \Codeception\Maybe
-     */
-    public function haveInSession($key, $value) {
-        $this->scenario->addStep(new \Codeception\Step\Action('haveInSession', func_get_args()));
-        if ($this->scenario->running()) {
-            $result = $this->scenario->runStep();
-            return new Maybe($result);
-        }
-        return new Maybe();
-    }
-
- 
-    /**
-     * This method is generated.
-     * Documentation taken from corresponding module.
-     * ----------------------------------------------
-     *
      * Authenticates user for HTTP_AUTH 
      *
      * @param $username
@@ -2197,6 +2159,25 @@ class TestGuy extends \Codeception\AbstractGuy
      */
     public function dontSeeInTitle($title) {
         $this->scenario->addStep(new \Codeception\Step\Assertion('dontSeeInTitle', func_get_args()));
+        if ($this->scenario->running()) {
+            $result = $this->scenario->runStep();
+            return new Maybe($result);
+        }
+        return new Maybe();
+    }
+
+ 
+    /**
+     * This method is generated.
+     * Documentation taken from corresponding module.
+     * ----------------------------------------------
+     *
+     *
+     * @see Codeception\Module\TestHelper::haveInSession()
+     * @return \Codeception\Maybe
+     */
+    public function haveInSession() {
+        $this->scenario->addStep(new \Codeception\Step\Action('haveInSession', func_get_args()));
         if ($this->scenario->running()) {
             $result = $this->scenario->runStep();
             return new Maybe($result);
